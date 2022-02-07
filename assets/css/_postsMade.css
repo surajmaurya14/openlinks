@@ -1,0 +1,127 @@
+#categoryPosts {
+    width: 100%;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #d8e3e7;
+    padding: 8px;
+    border-radius: 8px;
+    list-style: none;
+    margin: 0;
+}
+
+#commentForm {
+    background-color: #d8e8e7;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    align-items: flex-start;
+}
+
+#commentForm > *,
+#commentForm > div > * {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    font-size: medium;
+    border-radius: 8px;
+    background-color: #d8f0e7;
+}
+#commentTyped {
+    background-color: #d8e8e7;
+    resize: none;
+    width: -webkit-fill-available;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+#commentTyped::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#commentTyped {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+#commentForm > div > button {
+    display: inline;
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 8px;
+    margin-top: 16px;
+}
+#commentForm > textarea:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#commentForm > div > button:focus {
+    background-color: #126e82;
+    outline: none;
+}
+#postsMade {
+    border-radius: 8px;
+}
+#postsMade > li {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    font-size: large;
+    border-radius: 8px;
+    background-color: #d8f0e7;
+    margin-bottom: 16px;
+}
+#postsMade > li > p > small > a {
+    text-decoration: none;
+}
+#commentsPosted > * {
+    margin: 8px;
+}
+#commentsList {
+    padding: 16px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+#commentsList > li {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #d0efeb;
+    list-style: none;
+}
+#commentsList > li > p {
+    font-size: small;
+}
+#commentsList > li > p > small > a {
+    text-decoration: none;
+}
+#commentsList > li > div > button {
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    display: inline;
+    border: none;
+    padding: 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+}
+#commentsList > li > div > button:focus {
+    background-color: #126e82;
+    outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+    #commentsList {
+        width: 100%;
+        padding: 0;
+    }
+    #postsMade {
+        padding-left: 0px;
+    }
+    #commentsList > li {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,59 @@
+#topPage {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    min-height: 100vh;
+}
+
+#categoriesList {
+    width: 100%;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #d8e3e7;
+    padding: 8px;
+    border-radius: 8px;
+    list-style: none;
+}
+#categoriesList > li {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    font-size: large;
+    border-radius: 8px;
+    background-color: #d8f0e7;
+}
+#categoryFormButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#categoryFormButtons > form > button,
+#categoryFormButtons > div > form > button {
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+    padding: 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+    border: solid 1px #d8e3e7;
+    outline: none;
+}
+#categoryFormButtons > div > form > button {
+    background-color: black;
+    font-size: small;
+}
+#categoryFormButtons > form > button:focus,
+#categoryFormButtons > div > form > button:focus {
+    background-color: #126e82;
+}
+#buttonDeleteCategory {
+    background-color: black;
+}
+
+@media screen and (max-width: 1024px) {
+    #categoriesList {
+        margin: 8px;
+    }
+}

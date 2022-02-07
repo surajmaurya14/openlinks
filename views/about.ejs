@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="/assets/css/about.css" />
+
+<div id="topPage">
+    <div id="aboutTeam">
+        <img id="aboutImg" src="/assets/images/OpenLinks.svg" alt="" />
+        <div>
+            <ul id="developersList">
+                <p>Developers :</p>
+                <% for(let i of developersList) { %>
+                <li><p><%= i %></p></li>
+                <%}%>
+            </ul>
+            <div>
+                <ul id="ourHandles">
+                    <% for(let i of handles) {%>
+                    <li>
+                        <a href="<%=i.link%>" target="_blank"
+                            ><img
+                                class="handleLogo"
+                                src="<%=i.filePath%>"
+                                alt=""
+                        /></a>
+                    </li>
+                    <%}%>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback">
+        <p>Found any bug or want to request a feature ?</p>
+        <p>Contact Us :</p>
+        <form
+            id="userFeedbackForm"
+            action="mailto:mauryasuraju@gmail.com"
+            method="POST"
+        >
+            <input
+                type="text"
+                name="Name"
+                placeholder="Your Name"
+                required
+                maxlength="40"
+            />
+            <input
+                type="text"
+                name="Email"
+                placeholder="Your Email"
+                required
+                maxlength="40"
+            />
+            <select id="messageFor">
+                <% for(let i of messageSubject) { %>
+                <option value="<%= i %>" name="Subject: "><%=i%></option>
+                <%}%>
+            </select>
+            <textarea
+                name="Message"
+                id="message"
+                cols="30"
+                rows="10 "
+            ></textarea>
+            <button type="submit">Open Email Client</button>
+        </form>
+    </div>
+</div>

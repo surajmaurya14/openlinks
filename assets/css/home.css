@@ -1,0 +1,93 @@
+#topPage {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    padding: 8px;
+}
+
+#postContent {
+    margin: 16px;
+}
+
+#postForm {
+    background-color: #d8e8e7;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+#postForm > * {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1px #d8e3e7;
+}
+#typedContent {
+    background-color: #d8e3e7;
+    resize: none;
+}
+
+#postForm > button {
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+#postForm > textarea:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#postForm > select:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#postForm > button:focus {
+    background-color: #126e82;
+    outline: none;
+}
+
+#createCategory {
+    margin: 16px;
+}
+#createCategoryForm {
+    background-color: #d8e8e7;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+#createCategoryForm > * {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    border: solid 1px #d8e8e7;
+}
+
+#categoryName {
+    background-color: #d8e3e7;
+}
+
+#createCategoryForm > button {
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+#createCategoryForm > input:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#createCategoryForm > button:focus {
+    background-color: #126e82;
+    outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+    #topPage {
+        flex-direction: column;
+    }
+}

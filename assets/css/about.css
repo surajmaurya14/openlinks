@@ -1,0 +1,137 @@
+#topPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 8px;
+}
+
+#aboutTeam {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#aboutImg {
+    width: 32%;
+    border-radius: 50%;
+    margin-right: 8%;
+}
+
+#developersList {
+    font-size: x-large;
+    list-style: none;
+}
+#developersList > p {
+    font-size: xx-large;
+}
+#developersList > li > p {
+    font-size: x-large;
+}
+
+#feedback > p {
+    font-size: large;
+}
+
+#userFeedbackForm {
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+}
+#userFeedbackForm > input,
+#userFeedbackForm > textarea,
+#userFeedbackForm > button,
+#userFeedbackForm > select {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    font-size: large;
+    border-radius: 8px;
+    border: solid 1px #d8e3e7;
+}
+#userFeedbackForm > textarea {
+    padding: 8px;
+    margin-top: 16px;
+}
+#userFeedbackForm > input:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#userFeedbackForm > textarea:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#userFeedbackForm > button {
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+#messageFor:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#userFeedbackForm > button:focus {
+    background-color: #126e82;
+    outline: none;
+}
+#ourHandles {
+    list-style: none;
+}
+#ourHandles > li {
+    display: inline;
+}
+.handleLogo {
+    width: 32px;
+    margin-right: 8px;
+}
+
+#message {
+    resize: none;
+}
+
+@media screen and (max-width: 1024px) {
+    #topPage {
+        flex-direction: column;
+        padding: 16px;
+        align-items: center;
+    }
+    #topPage > div {
+        width: 80%;
+    }
+
+    #aboutTeam {
+        margin-bottom: 40px;
+    }
+    #aboutImg {
+        margin-right: 0px;
+        width: 32%;
+        min-width: 120px;
+        max-width: 240px;
+    }
+
+    #developersList > p {
+        font-size: large;
+    }
+    #developersList > li > p {
+        font-size: medium;
+    }
+
+    #userFeedbackForm {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 96%;
+    }
+    #userFeedbackForm > input,
+    button {
+        font-size: medium;
+    }
+    #feedback > p {
+        font-size: medium;
+    }
+}

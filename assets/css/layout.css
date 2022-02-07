@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+    background: linear-gradient(90deg, #cfd9df, #e2ebf0);
+    color: black;
+    min-width: 320px;
+    background-attachment: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+pre {
+    white-space: pre-wrap;
+}
+
+.alertify-notifier > .ajs-message {
+    border-radius: 8px;
+    text-align: center;
+}

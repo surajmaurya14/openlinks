@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/assets/css/categories.css" />
+<div id="topPage">
+    <ul id="categoriesList">
+        <% for(let i of categories) {%>
+        <li>
+            <div id="categoryFormButtons">
+                <form action="/categories/<%=i.name%>" method="GET">
+                    <button type="submit">
+                        <b><%=i.name%></b>
+                    </button>
+                </form>
+                <div>
+                    <%if (locals.user && ( (locals.user.id==i.user)||
+                    (locals.user.admin)) ) {%>
+                    <form action="/categories/delete/<%=i.id%>" method="GET">
+                        <button type="submit" id="buttonDeleteCategory">
+                            <b>Delete</b>
+                        </button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+
+            <p>Created On <%=i.createdAt%></p>
+        </li>
+        <% } %>
+    </ul>
+</div>

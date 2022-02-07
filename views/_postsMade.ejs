@@ -1,0 +1,93 @@
+<link rel="stylesheet" href="/assets/css/_postsMade.css" />
+<div id="categoryPosts">
+    <ul id="postsMade">
+        <h1><%=pageCategory %></h1>
+        <% for(let i of posts) {%>
+        <li>
+            <pre><code><%= i.content %></code></pre>
+            <p>
+                <small>
+                    Posted on <%=i.createdAt %> by
+                    <a href="/users/profile/<%= i.user._id%>"
+                        ><b><%=i.user.username%></b></a
+                    >
+                </small>
+            </p>
+            <p><small>Last Update: <%=i.updatedAt %></small></p>
+            <div id="commentOnPost">
+                <form action="/comments/create" method="POST" id="commentForm">
+                    <input type="hidden" name="post" value="<%=i._id%>" />
+                    <textarea
+                        name="content"
+                        rows="5"
+                        cols="10"
+                        placeholder="Type Here..."
+                        id="commentTyped"
+                        required
+                    ></textarea>
+                    <div>
+                        <button
+                            type="button"
+                            onclick="location.href='/likes/status/?name=Post&id=<%=i.id%>'"
+                        >
+                            <%=i.likes.length%>
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                        <button type="submit">Reply</button>
+                        <%if (locals.user && ( (locals.user.id==i.user.id)||
+                        (locals.user.admin)) ) {%>
+                        <button
+                            type="button"
+                            onclick="location.href='/posts/delete/<%=i.id%>'"
+                        >
+                            Delete
+                        </button>
+                        <%}%>
+                    </div>
+                </form>
+            </div>
+            <div id="commentsPosted">
+                <details>
+                    <summary><%=i.comments.length%> Comments</summary>
+                    <ul id="commentsList">
+                        <% for(let j of i.comments) { %>
+                        <li>
+                            <pre><code><%=j.content%></code></pre>
+                            <p>
+                                <small
+                                    >Commented on <%=j.createdAt%> by
+
+                                    <a href="/users/profile/<%=j.user._id%>"
+                                        ><b><%=j.user.username%></b></a
+                                    >
+                                </small>
+                            </p>
+                            <div>
+                                <button
+                                    type="button"
+                                    onclick="location.href='/likes/status/?name=Comment&id=<%=j.id%>'"
+                                >
+                                    <%=j.likes.length%>
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                                <%if (locals.user && (
+                                (locals.user.id==j.user._id)||
+                                (locals.user.admin)) ) {%>
+                                <button
+                                    type="button"
+                                    onclick="location.href='/comments/delete/<%=j.id%>'"
+                                >
+                                    Delete
+                                </button>
+                                <%}%>
+                            </div>
+                        </li>
+
+                        <% } %>
+                    </ul>
+                </details>
+            </div>
+        </li>
+        <% } %>
+    </ul>
+</div>

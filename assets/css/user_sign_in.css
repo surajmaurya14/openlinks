@@ -1,0 +1,106 @@
+#topPage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 8px;
+}
+#topPage > div {
+    width: 48%;
+}
+
+#signIn {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+}
+#signIn > input,
+#signIn > button,
+#signIn > div > a {
+    display: block;
+    margin: 8px;
+    padding: 12px;
+    font-size: large;
+    border-radius: 8px;
+    border: solid 1px #d8e3e7;
+}
+#signIn > button {
+    background-color: #51c4d3;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    margin-top: 16px;
+}
+#signIn > input:focus {
+    border-color: #126e82;
+    outline: none;
+}
+#signIn > button:focus {
+    background-color: #126e82;
+    outline: none;
+}
+
+#signIn > div > a {
+    text-decoration: none;
+    background-color: #fff;
+    color: #000;
+    margin-top: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#signIn > div > a > p {
+    display: inline;
+    margin: 0%;
+}
+.google-logo {
+    width: 24px;
+}
+#signIn > div > a:hover {
+    background-color: #eef;
+    outline: none;
+}
+
+#introTitle {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-size: 4rem;
+    color: #132c33;
+}
+#intro {
+    width: 64%;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1024px) {
+    #topPage {
+        flex-direction: column;
+        align-items: center;
+        padding: 16px;
+    }
+    #topPage > div {
+        width: 88%;
+    }
+    #signIn {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 80%;
+    }
+    #signIn > input,
+    #signIn > button {
+        font-size: medium;
+    }
+    #intro {
+        width: 100%;
+        font-size: 1rem;
+    }
+    #introTitle {
+        font-size: 2rem;
+    }
+}

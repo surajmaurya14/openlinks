@@ -1,0 +1,40 @@
+<header>
+    <div id="headerBar">
+        <p id="headerBrandName">OpenLinks</p>
+        <div id="navBar">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+
+                <% if(!locals.user) {%>
+
+                <li>
+                    <a href="/users/sign-in">SignIn</a>
+                </li>
+                <li>
+                    <a href="/users/sign-up">SignUp</a>
+                </li>
+                <% } else{ %>
+                <li>
+                    <a href="/categories">Categories</a>
+                </li>
+
+                <% }%> <% if(locals.user) {%>
+
+                <li>
+                    <a href="/users/profile/self"><%=user.first_name%></a>
+                </li>
+                <%}%> <% if(locals.user) {%>
+                <li>
+                    <a href="/users/sign-out">Sign Out</a>
+                </li>
+                <% }%>
+
+                <li>
+                    <a href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

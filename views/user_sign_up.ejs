@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/assets/css/user_sign_up.css" />
+<div id="topPage">
+    <div>
+        <h1 id="introTitle">OpenLinks</h1>
+        <p id="intro">
+            OpenLinks helps you to start a discussion on any topic and engage
+            with Great Community to get their response or just view the
+            discussion of the post to get Information
+        </p>
+    </div>
+    <form id="signUp" action="/users/create/" method="POST">
+        <input
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            required
+            maxlength="32"
+        />
+        <input
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            required
+            maxlength="32"
+        />
+        <input
+            type="text"
+            name="username"
+            placeholder="Your Username"
+            required
+            maxlength="40"
+        />
+        <input
+            type="text"
+            name="email"
+            placeholder="Your Email"
+            required
+            maxlength="40"
+        />
+        <input
+            type="password"
+            name="password"
+            placeholder="Your Password"
+            required
+            maxlength="40"
+            minlength="6"
+        />
+        <input
+            type="password"
+            name="confirm_password"
+            placeholder="Confirm Password"
+            required
+            maxlength="40"
+            minlength="6"
+        />
+        <input
+            type="password"
+            name="masterKey"
+            placeholder="Register as Admin? Enter Master Key"
+            maxlength="40"
+            minlength="6"
+        />
+        <button type="submit">Sign Up</button>
+    </form>
+</div>

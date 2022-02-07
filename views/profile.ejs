@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="/assets/css/users_profile.css" />
+<h1 id="topPageTitle">Profile Information</h1>
+<div id="topPage">
+    <figure>
+        <img src="/assets/images/user-solid.svg" alt="" / id="userLogo">
+        <figcaption id="userCaption"><%= userProfile.first_name%></figcaption>
+    </figure>
+    <div id="profileInformation">
+        <p><b class="profileField">Username: </b><%= userProfile.username%></p>
+        <p>
+            <b class="profileField">Name: </b><%=userProfile.first_name%>
+            <%=userProfile.last_name%>
+        </p>
+        <p><b class="profileField">Email: </b><%= userProfile.email%></p>
+        <p><b class="profileField">Joined: </b><%=userProfile.createdAt%></p>
+        <p>
+            <b class="profileField">Last Update: </b> <%=
+            userProfile.updatedAt%>
+        </p>
+        <p>
+            <b class="profileField">Account Type: </b><%if(userProfile.admin) {
+            %> Admin <% } else{%> User<% } %>
+        </p>
+        <% if(locals.user.id == userProfile.id){ %>
+        <div>
+            <form
+                id="updateForm"
+                action="/users/update/<%=locals.user.id%>"
+                method="POST"
+            >
+                <p id="updateFormHeading">Update Specific Information</p>
+                <input
+                    type="text"
+                    name="first_name"
+                    placeholder="First Name"
+                    maxlength="32"
+                />
+                <input
+                    type="text"
+                    name="last_name"
+                    placeholder="Last Name"
+                    maxlength="32"
+                />
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                    maxlength="32"
+                />
+
+                <input
+                    type="password"
+                    name="new_password"
+                    placeholder="New Password"
+                    maxlength="40"
+                    minlength="6"
+                />
+
+                <div>
+                    <input
+                        type="radio"
+                        name="accountType"
+                        value="User Account"
+                        checked
+                    />
+                    <p>User Account</p>
+                </div>
+                <div>
+                    <input
+                        type="radio"
+                        name="accountType"
+                        value="Master Account"
+                    />
+                    <p>Admin Account</p>
+                    <input
+                        type="password"
+                        name="masterKey"
+                        placeholder="Master Key?"
+                        maxlength="40"
+                        minlength="6"
+                    />
+                </div>
+
+                <button type="submit">Update</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+</div>

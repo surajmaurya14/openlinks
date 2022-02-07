@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="/assets/css/home.css" />
+<div id="topPage">
+    <div>
+        <div id="postContent">
+            <p>Create Post</p>
+            <form id="postForm" action="/posts/create" method="POST">
+                <textarea
+                    name="postedString"
+                    id="typedContent"
+                    cols="30"
+                    rows="10"
+                    placeholder="Type Here..."
+                    required
+                ></textarea>
+                <select name="categoryName" required>
+                    <% for(let i of categories) {%>
+                    <option value="<%=i.name%>"><%=i.name%></option>
+                    <% } %>
+                </select>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        <div id="createCategory">
+            <p>Create Category</p>
+            <form
+                id="createCategoryForm"
+                action="/categories/create-category"
+                method="POST"
+            >
+                <input
+                    autocomplete="off"
+                    type="text"
+                    name="category"
+                    id="categoryName"
+                    placeholder="Are you admin? Type Here.."
+                    required
+                    onkeypress="return blockSpecialChar(event)"
+                    ondrop="return false;"
+                    onpaste="return false;"
+                />
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </div>
+    <%- include('_postsMade') -%>
+</div>
+<script src="/assets/js/home.js"></script>

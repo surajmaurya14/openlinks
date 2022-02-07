@@ -1,0 +1,37 @@
+#headerBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    align-items: center;
+}
+#headerBar {
+    background-color: #f4f9f9;
+}
+#navBar {
+    display: flex;
+    flex-direction: row;
+}
+#navBar > ul {
+    list-style: none;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    margin-block: 0;
+}
+
+#navBar > ul > li {
+    display: inline;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+#navBar > ul > li > a {
+    text-decoration: none;
+}
+#headerBrandName {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    color: #132c33;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-block: 0%;
+}
